@@ -18,9 +18,3 @@ export const usePlayersStyles = makeStyles(theme => ({
         backgroundColor: '#fff',
     },
 }))
-
-export const usePlayerStyles = makeStyles(theme => ({
-    container: {
-        padding: theme.spacing(2),
-    },
-}))

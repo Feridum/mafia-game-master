@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import { useStyles } from './BaseLayout.styles'
-import { Typography, AppBar, Toolbar, Fab } from '@material-ui/core'
-import { Add } from '@material-ui/icons'
+import { AppBar, Toolbar } from '@material-ui/core'
 import { BaseLayoutProps } from './BaseLayout.types'
 
 export const BaseLayout: FC<BaseLayoutProps> = ({

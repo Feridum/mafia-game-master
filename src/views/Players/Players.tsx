@@ -1,32 +1,16 @@
-import React, { Fragment, FC, useContext } from 'react'
+import React, { FC, useContext } from 'react'
 import { BaseLayout } from 'shared/BaseLayout/BaseLayout'
-import {
-    Box,
-    Typography,
-    Paper,
-    AppBar,
-    Button,
-    Toolbar,
-    Fab,
-    useScrollTrigger,
-} from '@material-ui/core'
+import { Fab } from '@material-ui/core'
 import { Add } from '@material-ui/icons'
-import { usePlayersStyles, usePlayerStyles } from './Players.styles'
+import { usePlayersStyles } from './Players.styles'
 import { __RouterContext } from 'react-router'
 import { Routes } from 'routing/routes'
+import { useStoreState } from 'store/store'
+import { Player } from './Player/Player'
+import { PlayersProps } from './Players.types'
 
-const Player: FC = () => {
-    const classes = usePlayerStyles()
-    return (
-        <Paper classes={{ root: classes.container }}>
-            <Typography variant="h5" component="h3">
-                Olek
-            </Typography>
-        </Paper>
-    )
-}
-
-export const Players: FC = () => {
+export const Players: FC<PlayersProps> = () => {
+    const players = useStoreState(store => store.player.items)
     const classes = usePlayersStyles()
     const router = useContext(__RouterContext)
 
@@ -44,22 +28,9 @@ export const Players: FC = () => {
             }
         >
             <div className={classes.container}>
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
-                <Player />
+                {players.map(player => (
+                    <Player player={player} />
+                ))}
             </div>
         </BaseLayout>
     )

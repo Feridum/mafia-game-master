@@ -3,12 +3,18 @@ import { BaseLayout } from 'shared/BaseLayout/BaseLayout'
 import { Form, Field } from 'react-final-form'
 import { TextField } from 'final-form-material-ui'
 import { Grid, Button } from '@material-ui/core'
+import { useStoreActions } from 'store/store'
 
 export const AddPlayer: FC = () => {
+    const addPlayer = useStoreActions(actions => actions.player.addPlayer)
+
+    const handleSubmit = (values: { name: string }) => {
+        addPlayer(values.name)
+    }
     return (
         <BaseLayout>
             <Form
-                onSubmit={console.log}
+                onSubmit={handleSubmit}
                 initialValues={{ name: '' }}
                 render={({ handleSubmit, submitting }) => (
                     <form onSubmit={handleSubmit} noValidate>

@@ -9,7 +9,7 @@
     "@types/node": "12.0.10",
     "@types/react": "16.8.22",
     "@types/react-dom": "16.8.4",
-    "easy-peasy": "^2.6.5",
+    "easy-peasy": "3.0.0-alpha.2",
     "final-form": "^4.16.1",
     "final-form-material-ui": "^0.3.0",
     "react": "^16.8.6",
@@ -17,7 +17,10 @@
     "react-final-form": "^6.3.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "typescript": "3.5.2"
+    "react-swipeable-views": "^0.13.3",
+    "redux-persist": "^5.10.0",
+    "typescript": "3.5.1",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -45,6 +48,8 @@
     "@types/material-ui": "^0.21.6",
     "@types/react-router": "^5.0.3",
     "@types/react-router-dom": "^4.3.4",
+    "@types/react-swipeable-views": "^0.13.0",
+    "@types/uuid": "^3.4.5",
     "prettier": "^1.18.2"
   }
 }
