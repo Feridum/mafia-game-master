@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mafia-game-master/precache-manifest.fec0daf89128369fd55dd943d30a1ed2.js"
+  "/mafia-game-master/precache-manifest.3725fbe5aa1e3ea276d61cc9b270f0d3.js"
 );
 
 self.addEventListener('message', (event) => {
