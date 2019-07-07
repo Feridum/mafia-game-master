@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5a0b18f8a27cb315211e430ebaa93a4d",
+    "revision": "daccc1e056dc8cdfeccd8240b061d17d",
     "url": "/mafia-game-master/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mafia-game-master/static/js/2.02aa6d57.chunk.js"
   },
   {
-    "revision": "e5f013027259d3ca4b12",
-    "url": "/mafia-game-master/static/js/main.71a73f3e.chunk.js"
+    "revision": "e004c615e638080018eb",
+    "url": "/mafia-game-master/static/js/main.1b337214.chunk.js"
   },
   {
     "revision": "99d804da2b77779c98fd",
