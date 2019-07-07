@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/mafia-game-master/static/js/main.27eee935.chunk.js",
+    "main.js.map": "/mafia-game-master/static/js/main.27eee935.chunk.js.map",
+    "runtime~main.js": "/mafia-game-master/static/js/runtime~main.47bd6a44.js",
+    "runtime~main.js.map": "/mafia-game-master/static/js/runtime~main.47bd6a44.js.map",
+    "static/js/2.3a66525e.chunk.js": "/mafia-game-master/static/js/2.3a66525e.chunk.js",
+    "static/js/2.3a66525e.chunk.js.map": "/mafia-game-master/static/js/2.3a66525e.chunk.js.map",
+    "index.html": "/mafia-game-master/index.html",
+    "precache-manifest.1933d4bf9db068d62a6b0063c6558a96.js": "/mafia-game-master/precache-manifest.1933d4bf9db068d62a6b0063c6558a96.js",
+    "service-worker.js": "/mafia-game-master/service-worker.js"
+  }
+}
