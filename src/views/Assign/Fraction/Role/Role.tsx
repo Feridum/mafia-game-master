@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react'
-import { Paper, Typography } from '@material-ui/core'
+import { Button, Typography } from '@material-ui/core'
 import { __RouterContext } from 'react-router'
 import { useRoleStyles } from './Role.styles'
 import { RoleProps } from './Role.types'
@@ -25,10 +25,15 @@ export const Role: FC<RoleProps> = ({ role, fraction }) => {
     }
 
     return (
-        <Paper classes={{ root: classes.container }} onClick={handleClick}>
+        <Button
+            classes={{ root: classes.container }}
+            onClick={handleClick}
+            variant="outlined"
+            fullWidth
+        >
             <Typography variant="h5" component="h3">
                 {role}
             </Typography>
-        </Paper>
+        </Button>
     )
 }
