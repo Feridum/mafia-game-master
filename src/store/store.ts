@@ -3,11 +3,11 @@ import { StoreModel } from './store.types'
 import { playerModel } from './player/player.model'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { fractionModel } from './fraction/fraction.model'
+import { gameModel } from './game/game.model'
 
 const storeModel: StoreModel = {
     player: playerModel,
-    fraction: fractionModel,
+    game: gameModel,
 }
 
 const persistConfig = {

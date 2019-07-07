@@ -16,8 +16,13 @@ export const Player: FC<PlayerProps> = ({ player }) => {
             }
         >
             <Typography variant="h5" component="h3">
-                Olek
+                {player.name}
             </Typography>
+            {player.role && (
+                <Typography variant="h6" component="h6">
+                    {player.role}
+                </Typography>
+            )}
         </Paper>
     )
 }

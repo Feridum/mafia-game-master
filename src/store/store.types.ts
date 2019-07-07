@@ -1,7 +1,8 @@
 import { PlayerModel } from './player/player.types'
-import { FractionModel } from './fraction/fraction.types'
+
+import { GameModel } from './game/game.types'
 
 export interface StoreModel {
     player: PlayerModel
-    fraction: FractionModel
+    game: GameModel
 }

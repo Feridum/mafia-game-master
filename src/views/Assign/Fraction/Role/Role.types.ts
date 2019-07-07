@@ -1,7 +1,6 @@
-import { FractionItem } from 'store/fraction/fraction.types'
+import { Fractions, Roles } from 'store/player/player.types'
 
 export interface RoleProps {
-    roleKey: string
-    roleValue: string
-    type: 'town' | 'mafia' | 'syndicate'
+    role: string
+    fraction: Fractions
 }

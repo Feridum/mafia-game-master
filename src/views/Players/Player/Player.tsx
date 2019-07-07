@@ -8,7 +8,7 @@ export const Player: FC<PlayerProps> = ({ player }) => {
     return (
         <Paper classes={{ root: classes.container }}>
             <Typography variant="h5" component="h3">
-                Olek
+                {player.name}
             </Typography>
         </Paper>
     )

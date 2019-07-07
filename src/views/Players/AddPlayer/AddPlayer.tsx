@@ -1,15 +1,18 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import { BaseLayout } from 'shared/BaseLayout/BaseLayout'
 import { Form, Field } from 'react-final-form'
 import { TextField } from 'final-form-material-ui'
 import { Grid, Button } from '@material-ui/core'
 import { useStoreActions } from 'store/store'
+import { __RouterContext } from 'react-router'
 
 export const AddPlayer: FC = () => {
+    const router = useContext(__RouterContext)
     const addPlayer = useStoreActions(actions => actions.player.addPlayer)
 
     const handleSubmit = (values: { name: string }) => {
         addPlayer(values.name)
+        router.history.goBack()
     }
     return (
         <BaseLayout>

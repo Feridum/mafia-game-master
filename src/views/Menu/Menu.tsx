@@ -31,6 +31,7 @@ export const Menu: FC = () => {
                 variant="outlined"
                 color="primary"
                 classes={{ root: classes.button }}
+                onClick={() => router.history.push(Routes.GAME_MENU)}
             >
                 Zacznij gre
             </Button>

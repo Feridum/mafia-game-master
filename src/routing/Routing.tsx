@@ -6,6 +6,8 @@ import { Routes } from './routes'
 import { AddPlayer } from 'views/Players/AddPlayer/AddPlayer'
 import { Assign } from 'views/Assign/Assign'
 import { Fraction } from 'views/Assign/Fraction/Fraction'
+import { Game } from 'views/Game/Game/Game'
+import { GameMenu } from 'views/Game/GameMenu/GameMenu'
 
 export const Routing: FC = () => {
     return (
@@ -15,6 +17,8 @@ export const Routing: FC = () => {
                 <Route exact path={Routes.PLAYERS} component={Players} />
                 <Route exact path={Routes.ADD_PLAYER} component={AddPlayer} />
                 <Route exact path={Routes.ASSIGN_PLAYERS} component={Assign} />
+                <Route exact path={Routes.GAME} component={Game} />
+                <Route exact path={Routes.GAME_MENU} component={GameMenu} />
                 <Route
                     exact
                     path={'/fractions/players/:id'}

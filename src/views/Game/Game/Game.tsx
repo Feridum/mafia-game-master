@@ -1,21 +1,19 @@
 import React, { FC, useState } from 'react'
 import SwipeableViews from 'react-swipeable-views'
 import { BaseLayout } from 'shared/BaseLayout/BaseLayout'
-import { AppBar, Tabs, Tab, useTheme } from '@material-ui/core'
+import { AppBar, Tabs, Tab, useTheme, Typography } from '@material-ui/core'
 import { Phone, LocationCity, Brightness3 } from '@material-ui/icons'
-import { useFractionStyles } from './Fraction.styles'
-import {
-    TownRoles,
-    MafiaRoles,
-    SyndicateRoles,
-} from 'store/player/player.types'
-import { Role } from './Role/Role'
-import { Fractions } from 'store/player/player.types'
+import { useGameStyles } from './Game.styles'
+import { useStoreState } from 'store/store'
+import { Player } from './Player/Player'
+import { Actions } from './Actions/Actions'
 
-export const Fraction: FC = () => {
-    const classes = useFractionStyles()
+export const Game: FC = () => {
+    const classes = useGameStyles()
     const theme = useTheme()
-    const [value, setValue] = useState(0)
+    const [value, setValue] = useState(1)
+    const players = useStoreState(store => store.game.players)
+    const logs = useStoreState(store => store.game.log)
 
     function handleChange(event: any, newValue: number) {
         setValue(newValue)
@@ -53,20 +51,25 @@ export const Fraction: FC = () => {
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={value}
                 onChangeIndex={handleChangeIndex}
+                className={classes.flexGrow}
+                slideClassName={classes.flexGrow}
+                containerStyle={{
+                    flexGrow: 1,
+                    display: 'flex',
+                }}
             >
-                <div dir={theme.direction}>
-                    {Object.values(TownRoles).map((role: string) => (
-                        <Role role={role} fraction={Fractions.TOWN} />
-                    ))}
+                <div dir={theme.direction} className={classes.flexGrow}>
+                    Logs
                 </div>
-                <div dir={theme.direction}>
-                    {Object.values(MafiaRoles).map((role: string) => (
-                        <Role role={role} fraction={Fractions.MAFIA} />
-                    ))}
+                <div dir={theme.direction} className={classes.flexGrow}>
+                    <Actions />
                 </div>
-                <div dir={theme.direction}>
-                    {Object.values(SyndicateRoles).map((role: string) => (
-                        <Role role={role} fraction={Fractions.SYNDICATE} />
+                <div
+                    dir={theme.direction}
+                    className={classes.scrollableContainer}
+                >
+                    {players.map(player => (
+                        <Player player={player} />
                     ))}
                 </div>
             </SwipeableViews>
