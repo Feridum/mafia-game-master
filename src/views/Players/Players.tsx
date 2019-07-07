@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react'
 import { BaseLayout } from 'shared/BaseLayout/BaseLayout'
-import { Fab } from '@material-ui/core'
+import { Fab, Typography } from '@material-ui/core'
 import { Add } from '@material-ui/icons'
 import { usePlayersStyles } from './Players.styles'
 import { __RouterContext } from 'react-router'
@@ -16,6 +16,14 @@ export const Players: FC<PlayersProps> = () => {
 
     return (
         <BaseLayout displayAppBar>
+            <div className={classes.legend}>
+                <Typography variant="h6" component="h6">
+                    Imie gracza
+                </Typography>
+                <Typography variant="h6" component="h6">
+                    Czy gra?
+                </Typography>
+            </div>
             <div className={classes.container}>
                 {players.map(player => (
                     <Player player={player} />

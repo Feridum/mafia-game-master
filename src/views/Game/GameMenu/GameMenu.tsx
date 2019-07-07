@@ -20,7 +20,7 @@ export const GameMenu: FC = () => {
         router.history.push(Routes.GAME)
     }
     return (
-        <BaseLayout>
+        <BaseLayout displayAppBar>
             <div className={classes.container}>
                 <Button
                     variant="outlined"

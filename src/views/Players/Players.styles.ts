@@ -16,4 +16,9 @@ export const usePlayersStyles = makeStyles(theme => ({
         display: 'flex',
         justifyContent: 'flex-end',
     },
+    legend: {
+        padding: theme.spacing(2),
+        display: 'flex',
+        justifyContent: 'space-between',
+    },
 }))
