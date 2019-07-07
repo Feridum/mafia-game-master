@@ -26,7 +26,7 @@ export const Fraction: FC = () => {
     }
 
     return (
-        <BaseLayout>
+        <BaseLayout displayAppBar>
             <AppBar position="static" color="default">
                 <Tabs
                     value={value}

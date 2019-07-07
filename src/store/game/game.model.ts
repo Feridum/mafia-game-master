@@ -192,7 +192,7 @@ export const gameModel: GameModel = {
 
             if (
                 payload.modifier === ModifiersTypes.CRAZY &&
-                player.role == TownRoles.CRAZY
+                player.role === TownRoles.CRAZY
             ) {
                 return {
                     ...player,
@@ -213,6 +213,7 @@ export const gameModel: GameModel = {
     }),
     startGame: action((state, payload) => {
         state.exisitingGame = true
+        state.periodNumber = 0
         state.players = payload.players.map<GamePlayer>(player => {
             return {
                 playerId: player.id,

@@ -5,11 +5,11 @@ import { PlayersDialog } from '../PlayersDialog/PlayersDialog'
 import { useStoreActions } from 'store/store'
 import {
     DayActions,
-    GamePlayer,
     ModifiersTypes,
     NightActions,
+    FirstNightActions,
 } from 'store/game/game.types'
-import { Fractions, TownRoles } from 'store/player/player.types'
+import { useActionStyles } from './Action.styles'
 
 export const Action: FC<ActionProps> = ({ action }) => {
     const [done, setDoneStatus] = useState(false)
@@ -19,6 +19,7 @@ export const Action: FC<ActionProps> = ({ action }) => {
     }>({ action: () => {}, isSpy: false })
     const [isPlayersDialogOpen, setPlayerDialog] = useState(false)
     const applyModifier = useStoreActions(actions => actions.game.applyModifier)
+    const classes = useActionStyles()
 
     const mapActionsToModifer: {
         [key in string]: (players: string[], spyInfo: string) => void
@@ -45,6 +46,8 @@ export const Action: FC<ActionProps> = ({ action }) => {
             applyModifier({ players, modifier: ModifiersTypes.SPY, spyInfo }),
         [NightActions.SPY2]: (players: string[], spyInfo: string) =>
             applyModifier({ players, modifier: ModifiersTypes.SPY, spyInfo }),
+        [FirstNightActions.BLACKMAIL]: (players: string[]) =>
+            applyModifier({ players, modifier: ModifiersTypes.BLACKMAIL }),
     }
 
     const spyActions: string[] = [
@@ -68,8 +71,11 @@ export const Action: FC<ActionProps> = ({ action }) => {
         <Fragment>
             <Button
                 fullWidth
-                variant={done ? 'contained' : 'outlined'}
+                variant={
+                    done ? 'contained' : action.action ? 'outlined' : 'text'
+                }
                 onClick={handleClick}
+                className={classes.container}
             >
                 {action.message}
             </Button>

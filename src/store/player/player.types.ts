@@ -38,6 +38,8 @@ export interface PlayerModel {
         PlayerModel,
         { playerId: string; role: string; fraction: Fractions }
     >
+    editPlayer: Action<PlayerModel, { id: string; name: string }>
+    changePlayerStatus: Action<PlayerModel, string>
 }
 
 export interface Player {

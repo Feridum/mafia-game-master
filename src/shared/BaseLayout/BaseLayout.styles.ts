@@ -8,7 +8,6 @@ export const useStyles = makeStyles(theme => ({
     },
 
     childContainer: {
-        marginTop: theme.spacing(2),
         display: 'flex',
         flexDirection: 'column',
         flexGrow: 1,

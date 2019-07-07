@@ -12,9 +12,8 @@ export const usePlayersStyles = makeStyles(theme => ({
         },
     },
     addContainer: {
-        position: 'fixed',
-        bottom: 0,
-        height: 100,
-        backgroundColor: '#fff',
+        padding: theme.spacing(2),
+        display: 'flex',
+        justifyContent: 'flex-end',
     },
 }))

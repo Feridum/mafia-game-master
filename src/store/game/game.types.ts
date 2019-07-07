@@ -1,5 +1,5 @@
 import { Action, Computed } from 'easy-peasy'
-import { Fractions, Roles, Player } from 'store/player/player.types'
+import { Player } from 'store/player/player.types'
 
 export enum GamePeriodsType {
     DAY = 'DAY',

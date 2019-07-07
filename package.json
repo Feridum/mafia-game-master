@@ -2,7 +2,7 @@
   "name": "mafia-game-master",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://feridum.github.io/mafia-game-master",
+  "homepage": "https://Feridum.github.io/mafia-game-master",
   "dependencies": {
     "@material-ui/core": "^4.1.3",
     "@material-ui/icons": "^4.2.1",

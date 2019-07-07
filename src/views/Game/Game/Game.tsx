@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react'
 import SwipeableViews from 'react-swipeable-views'
 import { BaseLayout } from 'shared/BaseLayout/BaseLayout'
-import { AppBar, Tabs, Tab, useTheme, Typography } from '@material-ui/core'
-import { Phone, LocationCity, Brightness3 } from '@material-ui/icons'
+import { AppBar, Tabs, Tab, useTheme } from '@material-ui/core'
+import { Notes, Person, ViewList } from '@material-ui/icons'
 import { useGameStyles } from './Game.styles'
 import { useStoreState } from 'store/store'
 import { Player } from './Player/Player'
@@ -24,7 +24,7 @@ export const Game: FC = () => {
     }
 
     return (
-        <BaseLayout>
+        <BaseLayout displayAppBar>
             <AppBar position="static" color="default">
                 <Tabs
                     value={value}
@@ -34,15 +34,15 @@ export const Game: FC = () => {
                     variant="fullWidth"
                 >
                     <Tab
-                        icon={<LocationCity />}
+                        icon={<Notes />}
                         classes={{ fullWidth: classes.fullWidth }}
                     />
                     <Tab
-                        icon={<Brightness3 />}
+                        icon={<ViewList />}
                         classes={{ fullWidth: classes.fullWidth }}
                     />
                     <Tab
-                        icon={<Phone />}
+                        icon={<Person />}
                         classes={{ fullWidth: classes.fullWidth }}
                     />
                 </Tabs>
@@ -59,7 +59,8 @@ export const Game: FC = () => {
                 }}
             >
                 <div dir={theme.direction} className={classes.flexGrow}>
-                    Logs
+                    Informacje o tym co działo się poprzednio zostaną dodane
+                    wkrótce
                 </div>
                 <div dir={theme.direction} className={classes.flexGrow}>
                     <Actions />

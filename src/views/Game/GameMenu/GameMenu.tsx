@@ -9,7 +9,9 @@ import { useStoreState, useStoreActions } from 'store/store'
 export const GameMenu: FC = () => {
     const classes = useGameMenuStyles()
     const router = useContext(__RouterContext)
-    const players = useStoreState(store => store.player.items)
+    const players = useStoreState(store => store.player.items).filter(
+        player => player.active
+    )
     const startNewGame = useStoreActions(actions => actions.game.startGame)
     const existingGame = useStoreState(store => store.game.exisitingGame)
 
@@ -19,23 +21,25 @@ export const GameMenu: FC = () => {
     }
     return (
         <BaseLayout>
-            <Button
-                variant="outlined"
-                color="primary"
-                classes={{ root: classes.button }}
-                onClick={handleNewGame}
-            >
-                Zacznij nową grę
-            </Button>
-            <Button
-                variant="outlined"
-                color="primary"
-                classes={{ root: classes.button }}
-                onClick={() => router.history.push(Routes.GAME)}
-                disabled={!existingGame}
-            >
-                Kontynuuj
-            </Button>
+            <div className={classes.container}>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    classes={{ root: classes.button }}
+                    onClick={handleNewGame}
+                >
+                    Zacznij nową grę
+                </Button>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    classes={{ root: classes.button }}
+                    onClick={() => router.history.push(Routes.GAME)}
+                    disabled={!existingGame}
+                >
+                    Kontynuuj
+                </Button>
+            </div>
         </BaseLayout>
     )
 }

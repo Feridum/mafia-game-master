@@ -11,30 +11,32 @@ export const Menu: FC = () => {
 
     return (
         <BaseLayout>
-            <Button
-                variant="outlined"
-                color="primary"
-                classes={{ root: classes.button }}
-                onClick={() => router.history.push(Routes.PLAYERS)}
-            >
-                Gracze
-            </Button>
-            <Button
-                variant="outlined"
-                color="primary"
-                classes={{ root: classes.button }}
-                onClick={() => router.history.push(Routes.ASSIGN_PLAYERS)}
-            >
-                Przypisz role
-            </Button>
-            <Button
-                variant="outlined"
-                color="primary"
-                classes={{ root: classes.button }}
-                onClick={() => router.history.push(Routes.GAME_MENU)}
-            >
-                Zacznij gre
-            </Button>
+            <div className={classes.container}>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    classes={{ root: classes.button }}
+                    onClick={() => router.history.push(Routes.PLAYERS)}
+                >
+                    Gracze
+                </Button>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    classes={{ root: classes.button }}
+                    onClick={() => router.history.push(Routes.ASSIGN_PLAYERS)}
+                >
+                    Przypisz role
+                </Button>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    classes={{ root: classes.button }}
+                    onClick={() => router.history.push(Routes.GAME_MENU)}
+                >
+                    Zacznij gre
+                </Button>
+            </div>
         </BaseLayout>
     )
 }

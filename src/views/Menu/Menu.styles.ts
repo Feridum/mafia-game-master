@@ -6,4 +6,10 @@ export const useMenuStyles = makeStyles(theme => ({
         height: 100,
         marginBottom: theme.spacing(2),
     },
+    container: {
+        justifyContent: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        flexGrow: 1,
+    },
 }))

@@ -6,4 +6,7 @@ export const useActionStyles = makeStyles(theme => ({
         flexDirection: 'column',
         flexGrow: 1,
     },
+    button: {
+        padding: theme.spacing(2),
+    },
 }))

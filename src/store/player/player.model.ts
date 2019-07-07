@@ -33,4 +33,28 @@ export const playerModel: PlayerModel = {
             return player
         })
     }),
+    editPlayer: action((state, payload) => {
+        state.items = state.items.map(player => {
+            if (player.id === payload.id) {
+                return {
+                    ...player,
+                    name: payload.name,
+                }
+            }
+
+            return player
+        })
+    }),
+    changePlayerStatus: action((state, payload) => {
+        state.items = state.items.map(player => {
+            if (player.id === payload) {
+                return {
+                    ...player,
+                    active: !player.active,
+                }
+            }
+
+            return player
+        })
+    }),
 }

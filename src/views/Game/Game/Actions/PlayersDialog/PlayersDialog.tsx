@@ -11,6 +11,7 @@ import { PlayersDialogProps } from './PlayersDialog.types'
 import { useStoreState } from 'store/store'
 import { GamePlayer } from 'store/game/game.types'
 import { Fractions } from 'store/player/player.types'
+import { usePlayersDialogStyles } from './PlayersDialog.styles'
 
 const mapFractionsToInfo: { [key in string]: string } = {
     [Fractions.MAFIA]: 'Nie z mafii',
@@ -27,6 +28,7 @@ export const PlayersDialog: FC<PlayersDialogProps> = ({
     const [selectedPlayersIds, setSelectedPlayers] = useState<string[]>([])
     const [spyInfo, setSpyInfo] = useState<GamePlayer | null>(null)
     const players = useStoreState(store => store.game.players)
+    const classes = usePlayersDialogStyles()
 
     const handleClick = (player: GamePlayer) => {
         if (isSpy) {
@@ -68,6 +70,7 @@ export const PlayersDialog: FC<PlayersDialogProps> = ({
                             }
                             onClick={() => handleClick(player)}
                             key={player.playerId}
+                            className={classes.button}
                         >
                             {player.name}
                         </Button>
@@ -113,6 +116,7 @@ export const PlayersDialog: FC<PlayersDialogProps> = ({
                 <Button
                     onClick={!!spyInfo ? () => setSpyInfo(null) : onClose}
                     color="primary"
+                    className={classes.button}
                 >
                     Anuluj
                 </Button>
@@ -121,6 +125,7 @@ export const PlayersDialog: FC<PlayersDialogProps> = ({
                         onClick={() => handleSave()}
                         color="primary"
                         disabled={selectedPlayersIds.length === 0}
+                        className={classes.button}
                     >
                         Zatwierdź zmainy dla graczy
                     </Button>

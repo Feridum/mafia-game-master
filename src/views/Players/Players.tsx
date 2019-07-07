@@ -15,9 +15,13 @@ export const Players: FC<PlayersProps> = () => {
     const router = useContext(__RouterContext)
 
     return (
-        <BaseLayout
-            displayAppBar
-            toolbar={
+        <BaseLayout displayAppBar>
+            <div className={classes.container}>
+                {players.map(player => (
+                    <Player player={player} />
+                ))}
+            </div>
+            <div className={classes.addContainer}>
                 <Fab
                     color="secondary"
                     aria-label="Add"
@@ -25,12 +29,6 @@ export const Players: FC<PlayersProps> = () => {
                 >
                     <Add />
                 </Fab>
-            }
-        >
-            <div className={classes.container}>
-                {players.map(player => (
-                    <Player player={player} />
-                ))}
             </div>
         </BaseLayout>
     )
