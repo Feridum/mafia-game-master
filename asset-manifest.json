@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/mafia-game-master/static/js/main.b56a15af.chunk.js",
-    "main.js.map": "/mafia-game-master/static/js/main.b56a15af.chunk.js.map",
+    "main.js": "/mafia-game-master/static/js/main.c374d05d.chunk.js",
+    "main.js.map": "/mafia-game-master/static/js/main.c374d05d.chunk.js.map",
     "runtime~main.js": "/mafia-game-master/static/js/runtime~main.47bd6a44.js",
     "runtime~main.js.map": "/mafia-game-master/static/js/runtime~main.47bd6a44.js.map",
-    "static/js/2.bc2ccb1f.chunk.js": "/mafia-game-master/static/js/2.bc2ccb1f.chunk.js",
-    "static/js/2.bc2ccb1f.chunk.js.map": "/mafia-game-master/static/js/2.bc2ccb1f.chunk.js.map",
+    "static/js/2.9ff8da6d.chunk.js": "/mafia-game-master/static/js/2.9ff8da6d.chunk.js",
+    "static/js/2.9ff8da6d.chunk.js.map": "/mafia-game-master/static/js/2.9ff8da6d.chunk.js.map",
     "index.html": "/mafia-game-master/index.html",
-    "precache-manifest.625b3b6a79fcaffee7e04406d8749765.js": "/mafia-game-master/precache-manifest.625b3b6a79fcaffee7e04406d8749765.js",
+    "precache-manifest.fec0daf89128369fd55dd943d30a1ed2.js": "/mafia-game-master/precache-manifest.fec0daf89128369fd55dd943d30a1ed2.js",
     "service-worker.js": "/mafia-game-master/service-worker.js"
   }
 }
