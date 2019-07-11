@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import SwipeableViews from 'react-swipeable-views'
 import { BaseLayout } from 'shared/BaseLayout/BaseLayout'
-import { AppBar, Tabs, Tab, useTheme } from '@material-ui/core'
+import { AppBar, Tabs, Tab, useTheme, Typography } from '@material-ui/core'
 import { Notes, Person, ViewList } from '@material-ui/icons'
 import { useGameStyles } from './Game.styles'
 import { useStoreState } from 'store/store'
@@ -58,9 +58,16 @@ export const Game: FC = () => {
                     display: 'flex',
                 }}
             >
-                <div dir={theme.direction} className={classes.flexGrow}>
-                    Informacje o tym co działo się poprzednio zostaną dodane
-                    wkrótce
+                <div dir={theme.direction} className={classes.logsContainer}>
+                    {logs.map((log, index) => (
+                        <Typography
+                            variant="body1"
+                            component="p"
+                            key={`action-log-${index}`}
+                        >
+                            {log.action}
+                        </Typography>
+                    ))}
                 </div>
                 <div dir={theme.direction} className={classes.flexGrow}>
                     <Actions />
@@ -70,7 +77,7 @@ export const Game: FC = () => {
                     className={classes.scrollableContainer}
                 >
                     {players.map(player => (
-                        <Player player={player} />
+                        <Player player={player} key={player.playerId} />
                     ))}
                 </div>
             </SwipeableViews>

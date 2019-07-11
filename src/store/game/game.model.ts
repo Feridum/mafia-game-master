@@ -63,6 +63,26 @@ const mapNewModifiers = (
     return modifiers[modifier]
 }
 
+const mapAction = (
+    player: GamePlayer,
+    modifier: ModifiersTypes,
+    spyInfo?: string
+): string => {
+    const modifiers: { [key in ModifiersTypes]: string } = {
+        [ModifiersTypes.POISON]: `Zatruto: ${player.name}`,
+        [ModifiersTypes.BLACKMAIL]: `Szantaż: ${player.name}`,
+        [ModifiersTypes.DEATH_ANGEL]: `Anioł śmierci oznaczył: ${player.name}`,
+        [ModifiersTypes.DEVIL]: `Diabolica onaczyła: ${player.name}`,
+        [ModifiersTypes.DOCTOR]: `Doktor wyleczył: ${player.name}`,
+        [ModifiersTypes.SPY]: `Szpieg wykradł informacje o: ${player.name} - ${spyInfo}`,
+        [ModifiersTypes.CRAZY]: `Szaleniec zabił: ${player.name}`,
+        [ModifiersTypes.QUICK]: `Szybki zabił: ${player.name}`,
+        [ModifiersTypes.DEATH]: `Umarł: ${player.name}`,
+    }
+
+    return modifiers[modifier]
+}
+
 export const gameModel: GameModel = {
     exisitingGame: false,
     periodNumber: 0,
@@ -170,6 +190,14 @@ export const gameModel: GameModel = {
     applyModifier: action((state, payload) => {
         state.players = state.players.map<GamePlayer>(player => {
             if (payload.players.includes(player.playerId)) {
+                state.log.push({
+                    action: mapAction(
+                        player,
+                        payload.modifier,
+                        payload.spyInfo
+                    ),
+                })
+
                 return {
                     ...player,
                     role:
@@ -229,6 +257,7 @@ export const gameModel: GameModel = {
                 },
             }
         })
+        state.log = []
     }),
     nextPeriod: action(state => {
         state.periodNumber = state.periodNumber + 1

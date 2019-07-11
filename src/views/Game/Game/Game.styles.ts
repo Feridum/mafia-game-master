@@ -9,6 +9,12 @@ export const useGameStyles = makeStyles(theme => ({
         flexDirection: 'column',
         flexGrow: 1,
     },
+    logsContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        flexGrow: 1,
+        marginTop: theme.spacing(2),
+    },
     scrollableContainer: {
         display: 'flex',
         flexDirection: 'column',

@@ -27,7 +27,9 @@ export const PlayersDialog: FC<PlayersDialogProps> = ({
 }) => {
     const [selectedPlayersIds, setSelectedPlayers] = useState<string[]>([])
     const [spyInfo, setSpyInfo] = useState<GamePlayer | null>(null)
-    const players = useStoreState(store => store.game.players)
+    const players = useStoreState(store =>
+        store.game.players.filter(player => !player.modifiers.death)
+    )
     const classes = usePlayersDialogStyles()
 
     const handleClick = (player: GamePlayer) => {
@@ -69,8 +71,8 @@ export const PlayersDialog: FC<PlayersDialogProps> = ({
                                     : 'outlined'
                             }
                             onClick={() => handleClick(player)}
-                            key={player.playerId}
                             className={classes.button}
+                            key={`player-dialog-${player.playerId}`}
                         >
                             {player.name}
                         </Button>
@@ -104,6 +106,7 @@ export const PlayersDialog: FC<PlayersDialogProps> = ({
                                                 fraction
                                             )
                                         }
+                                        key={fraction}
                                     >
                                         {mapFractionsToInfo[fraction]}
                                     </Button>

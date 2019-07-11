@@ -81,9 +81,7 @@ export interface GameModel {
     }
     players: GamePlayer[]
     log: Array<{
-        period: GamePeriodsType
-        periodNumber: number
-        actions: string[]
+        action: string
     }>
     applyModifier: Action<
         GameModel,

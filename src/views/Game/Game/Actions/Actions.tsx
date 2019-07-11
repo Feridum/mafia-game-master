@@ -82,7 +82,10 @@ export const Actions: FC = () => {
     return (
         <Fragment>
             <Box className={classes.container} key={period}>
-                {actions && actions.map(action => <Action action={action} />)}
+                {actions &&
+                    actions.map(action => (
+                        <Action action={action} key={action.type} />
+                    ))}
             </Box>
             <ButtonGroup fullWidth>
                 {periodNumber > 0 && (
